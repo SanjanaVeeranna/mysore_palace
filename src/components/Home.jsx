@@ -1268,6 +1268,13 @@ const TicketBookingPage = ({ event }) => {
     const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
     const [booked, setBooked] = useState(false);
 
+    // Helper to determine the label for the ticket type
+    const getTicketTypeLabel = () => {
+        if (withGuide) return "Entry + Guided Tour";
+        if (isStudent) return "Student Entry";
+        return "Regular Entry";
+    };
+
     const calculatePrice = () => {
         if (!event) return 0;
         if (isStudent) return withGuide ? event.ticketPrice.withGuide : event.ticketPrice.student;
@@ -1289,6 +1296,17 @@ const TicketBookingPage = ({ event }) => {
                         <p style={{ marginBottom: '0.5rem' }}><strong>Booking Reference:</strong> MP{Math.floor(Math.random() * 100000)}</p>
                         <p style={{ marginBottom: '0.5rem' }}><strong>Name:</strong> {formData.name}</p>
                         <p style={{ marginBottom: '0.5rem' }}><strong>Event:</strong> {event?.title}</p>
+
+                        {/* New Ticket Type Row */}
+                        <p style={{ marginBottom: '0.5rem' }}>
+                            <strong>Ticket Type:</strong> {getTicketTypeLabel()}
+                        </p>
+
+                        {/* Specific Add-on verification */}
+                        <p style={{ marginBottom: '0.5rem' }}>
+                            <strong>Guide Included:</strong> {withGuide ? '✅ Yes' : '❌ No'}
+                        </p>
+
                         <p style={{ marginBottom: '0.5rem' }}><strong>Total:</strong> ₹{calculatePrice()}</p>
                     </div>
                 </div>
