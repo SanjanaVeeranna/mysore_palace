@@ -1575,7 +1575,7 @@ const Footer = () => {
 };
 
 const App = () => {
-    const [currentPage, setCurrentPage] = useState('home');
+    const [currentPage, setCurrentPage] = useState('login');
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [selectedEvent, setSelectedEvent] = useState(null);
 
