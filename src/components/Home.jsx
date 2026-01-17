@@ -1591,7 +1591,7 @@ const App = () => {
             case 'studentEligibility': return <StudentEligibilityPage />;
             case 'dashboard': return <AdminDashboard setCurrentPage={setCurrentPage} />;
             case 'footer': return <Footer />;
-            default: return <HomePage setCurrentPage={setCurrentPage} />;
+            default: return <Login setCurrentPage={setCurrentPage} />;
         }
     };
 
