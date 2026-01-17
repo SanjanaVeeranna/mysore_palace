@@ -918,6 +918,14 @@ const Navbar = ({ currentPage, setCurrentPage, isLoggedIn, setIsLoggedIn }) => {
                         <button onClick={() => { setCurrentPage('home'); setMobileMenuOpen(false); }}>Home</button>
                         <button onClick={() => { setCurrentPage('events'); setMobileMenuOpen(false); }}>Events</button>
                         <button onClick={() => { setCurrentPage('studentEligibility'); setMobileMenuOpen(false); }}>Student Info</button>
+                        {isLoggedIn ? (
+                            <>
+                                <button onClick={() => { setCurrentPage('dashboard'); setMobileMenuOpen(false) }}>Dashboard</button>
+                                <button onClick={() => { setCurrentPage('login'); setMobileMenuOpen(false) }}>Logout</button>
+                            </>
+                        ) : (
+                            <button className="login-btn" onClick={() => setCurrentPage('login')}>Login</button>
+                        )}
                         {!isLoggedIn && <button onClick={() => { setCurrentPage('login'); setMobileMenuOpen(false); }}>Login</button>}
                     </div>
                 )}
