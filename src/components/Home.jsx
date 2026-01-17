@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Calendar, Users, BookOpen, Home, Menu, X, Clock, Ticket, TextAlignJustify } from 'lucide-react';
+import { useState } from 'react';
+import { Calendar, Users, BookOpen, Home, Menu, X, Clock, Ticket } from 'lucide-react';
 
 const AuthStyles = {
     wrapper: {
@@ -1549,7 +1549,7 @@ const Footer = () => {
                                     <th style={styles.th}>Name</th>
                                     <th style={styles.th}>Roll No.</th>
                                     <th style={styles.th}>Sem</th>
-                                    
+
                                 </tr>
                             </thead>
                             <tbody>
